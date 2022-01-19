@@ -1,13 +1,24 @@
 import React from "react";
 
-function Pizza() {
+function Pizza( {pizza, setEditPizzaObj} ) {
+  const { id, topping, size, vegetarian } = pizza
+
+  function handleEdit() {
+    setEditPizzaObj({ 
+      id: id, 
+      topping: topping, 
+      size: size, 
+      vegetarian: vegetarian 
+    })
+  }
+
   return (
     <tr>
-      <td>{"Replace Me With Pizza Topping"}</td>
-      <td>{"Replace Me With Pizza Size"}</td>
-      <td>{"Replace Me With Vegatarian"}</td>
+      <td>{topping}</td>
+      <td>{size}</td>
+      <td>{vegetarian}</td>
       <td>
-        <button type="button" className="btn btn-primary">
+        <button type="button" className="btn btn-primary" onClick={handleEdit}>
           Edit Pizza
         </button>
       </td>
