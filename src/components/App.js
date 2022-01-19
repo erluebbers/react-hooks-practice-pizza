@@ -18,12 +18,6 @@ function App() {
       .then(data => setPizzas(data))
   }, [])
 
-  
-  function handleSubmit(event) {
-    event.preventDefault()
-    console.log(editPizzaObj)
-  }
-
 
   return (
     <>
@@ -31,7 +25,7 @@ function App() {
       <PizzaForm 
         editPizzaObj={editPizzaObj}
         setEditPizzaObj={setEditPizzaObj}
-        handleSubmit={handleSubmit}
+        setPizzas={setPizzas}
       />
       <PizzaList 
         pizzas={pizzas}
